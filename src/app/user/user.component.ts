@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from '../models/user.class';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-user',
@@ -11,10 +12,19 @@ import { User } from '../models/user.class';
 export class UserComponent implements OnInit {
 
   user = new User();
+  allUsers: any = [];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public firestore: AngularFirestore ) { }
 
   ngOnInit(): void {
+    this.firestore
+    .collection('users')
+    .valueChanges()
+    .subscribe((changes: any)=>{
+      console.log('Recived Changes from DB: ', changes);
+      this.allUsers = changes;
+    });
+
   }
 
   openDialog(){
