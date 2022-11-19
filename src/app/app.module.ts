@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
@@ -29,7 +28,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 import { EditAdressDetailsComponent } from './edit-adress-details/edit-adress-details.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 
 @NgModule({
@@ -42,7 +41,6 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     UserDetailComponent,
     EditUserDetailsComponent,
     EditAdressDetailsComponent,
-    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,11 +58,13 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     MatNativeDateModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     MatProgressBarModule,
     MatCardModule,
     MatMenuModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
