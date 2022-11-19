@@ -1,0 +1,25 @@
+.user-detail-header {
+  height: 250px;
+  background-color: darkmagenta;
+  img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: calc(50% - 50px);
+    top: 165px;
+    background-color: white;
+    border-radius: 100%;
+    z-index: 2;
+  }
+  h2 {
+    margin: 0;
+    color: white;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover{
+      color: silver;
+    }
+  }
+}
