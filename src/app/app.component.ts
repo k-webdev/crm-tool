@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crm-tool';
+
 }

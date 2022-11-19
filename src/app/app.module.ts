@@ -26,6 +26,11 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
+import { EditAdressDetailsComponent } from './edit-adress-details/edit-adress-details.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +40,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     UserComponent,
     DialogAddUserComponent,
     UserDetailComponent,
+    EditUserDetailsComponent,
+    EditAdressDetailsComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +64,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     AngularFirestoreModule,
     MatProgressBarModule,
     MatCardModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
