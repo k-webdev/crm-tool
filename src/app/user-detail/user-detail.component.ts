@@ -33,8 +33,6 @@ user: User = new User();
     .valueChanges()
     .subscribe((user: any)=>{
       this.user = new User(user);
-      console.log('retrieved user: ', this.user);
-
     });
   }
 
